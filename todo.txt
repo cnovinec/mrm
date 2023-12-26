@@ -1,0 +1,15 @@
+To do list
+
+# remember to change range if wrong answers change
+# remember to change field names once quesitons have been updated
+# reword Docs intro letter.
+
+# print key or next question clue hint
+
+# calibration with questions
+
+# when all answer complete play count down timer giving 30 mins to get the right key from Mr Novinec
+def countdown():
+
+
+#delete user save data testing prints and check answer prints

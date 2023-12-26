@@ -1,0 +1,6 @@
+list of debug issue put lines of errror and code and issue discription
+Fixed by changing word from any to ENTER - line 61 & 99 issue with any key registers any typed key but must click enter
+fixed by changing myuser.game_over = to True (breaks while loop) - line 60 mrm.py does not sys.exit() even though i do when typed
+fixed by adding setup_TTD() - line 38 when goes throuhg login function it then exits does not continue the program
+fixed by adding main_screen() loop - line 30 after creating username program exits
+fixed by adding code into mrm.py and entering loop if incorrect - line 41 if yhou do not enter the correct username or password 3 times you still pass through to main program and clues
