@@ -4,3 +4,4 @@ fixed by changing myuser.game_over = to True (breaks while loop) - line 60 mrm.p
 fixed by adding setup_TTD() - line 38 when goes throuhg login function it then exits does not continue the program
 fixed by adding main_screen() loop - line 30 after creating username program exits
 fixed by adding code into mrm.py and entering loop if incorrect - line 41 if yhou do not enter the correct username or password 3 times you still pass through to main program and clues
+- issue with saving user data and login with testing on this terminal

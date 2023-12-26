@@ -3,6 +3,8 @@ To do list
 # remember to change range if wrong answers change
 # remember to change field names once quesitons have been updated
 # reword Docs intro letter.
+# change file location when final install on print
+#change command cls back to clear for the pi terminal
 
 # print key or next question clue hint
 

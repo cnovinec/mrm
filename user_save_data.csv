@@ -1,3 +1,4 @@
-user_row,username,current_question,answer0,answer1,answer2,answer3
-0,cal,3,,blue,electronic company,
-1,brad,2,library,blue,,
+user_row,username,current_question,answer0,answer1,answer2,answer3
+0,cal,3,,blue,electronic company,
+1,brad,2,library,blue,,
+2,test,0,,,,
