@@ -3,15 +3,14 @@ To do list
 # remember to change range if wrong answers change
 # remember to change field names once quesitons have been updated
 # reword Docs intro letter.
-# change file location when final install on print
-#change command cls back to clear for the pi terminal
+# create instructions for kids need to include powerup, keyboard power, commands: login/create user/logout/show keys/shutdown
 
-# print key or next question clue hint
+# work on layout screen for ttd_completion_screen()
 
-# calibration with questions
+# progress bar for questions
+-need to do for main questions
+-need to change for pi teleport sequence
 
-# when all answer complete play count down timer giving 30 mins to get the right key from Mr Novinec
-def countdown():
+# calibration with questions and terminal
 
-
-#delete user save data testing prints and check answer prints
+# double check to delete user save data testing prints and check answer prints
