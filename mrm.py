@@ -21,62 +21,64 @@ class user:
     def __init__(user):
         user.name = ''
         user.current_question = 0
-        user.total_questions = 4
+        user.total_questions = 38
         user.row = 0
         user.answer = ''
+        user.correct_answer = 'portal'
         user.current_quetion_field = ""
         user.key = ''
         user.current_time = ''
         user.random_no = 0
         user.countdown_complete = False
         user.first_time = True
+        user.access_TTD = False
         user.game_over = False
 myuser = user()
 
 # Title screen
 def title_screen_functions():
     option = input('>')
-    if option.lower() == ('login'):
+    if option.lower().strip() == ('login'):
         user_login()
         setup_TTD()
-    elif option.lower() == ('create user'):
+    elif option.lower().strip() == ('create user'):
         create_user()
         os.system('clear')
         main_screen()
-    elif option.lower() == ('.admin!!'):
+    elif option.lower().strip() == ('.admin!!'):
         admin_check()
-    elif option.lower() == ('shutdown'):
+    elif option.lower().strip() == ('shutdown'):
         shutdown()
-    elif option.lower() == ('.exit!!'):
+    elif option.lower().strip() == ('.exit!!'):
         myuser.game_over = True
-        exit_program()
+        exit_program().strip()
 
 
     while option.lower() not in ['login', 'create user', '.admin!!', 'shutdown', '.exit!!']:
         print('Incorrect input please enter login or create user')
         option = input('>')
-        if option.lower() == ('login'):
+        if option.lower().strip() == ('login'):
             user_login()
             setup_TTD()
-        elif option.lower() == ('create user'):
+        elif option.lower().strip() == ('create user'):
             create_user()
             os.system('clear')
             main_screen()
-        elif option.lower() == ('.admin!!'):
+        elif option.lower().strip() == ('.admin!!'):
             admin_check()
-        elif option.lower() == ('shutdown'):
+        elif option.lower().strip() == ('shutdown'):
             shutdown()
-        elif option.lower() == ('.exit!!'):
+        elif option.lower().strip() == ('.exit!!'):
             myuser.game_over = True
             exit_program()
 
 # user options to call from anywhere
 def user_options():
-    if myuser.answer.lower() == '.admin!!':
+    if myuser.answer.lower().strip() == '.admin!!':
         admin_check()
-    elif myuser.answer.lower() == 'logout':
+    elif myuser.answer.lower().strip() == 'logout':
         main_screen()
-    elif myuser.answer.lower() == 'shutdown':
+    elif myuser.answer.lower().strip() == 'shutdown':
         shutdown()
     elif str(myuser.answer) == '.exit!!':
         myuser.game_over = True
@@ -241,8 +243,8 @@ def create_user_save_data():
         myuser.row = user_row
 
     with open("user_save_data.csv", "a") as file_update:
-        writer = csv.DictWriter(file_update, fieldnames=["user_row","username","current_question","countdown_complete","answer0","answer1","answer2","answer3"])
-        writer.writerow({"user_row": myuser.row,"username": myuser.name,"current_question": 0, "countdown_complete": False})
+        writer = csv.DictWriter(file_update, fieldnames=["user_row","username","current_question","countdown_complete","access_TTD","answer0","answer1","answer2","answer3","answer4","answer5","answer6","answer7","answer8","answer9","answer10","answer11","answer12","answer13","answer14","answer15","answer16","answer17","answer18","answer19","answer20","answer21","answer22","answer23","answer24","answer25","answer26","answer27","answer28","answer29","answer30","answer31","answer32","answer33","answer34","answer35","answer36","answer37","answer38","answer39","answer40"])
+        writer.writerow({"user_row": myuser.row,"username": myuser.name,"current_question": 0, "countdown_complete": False, "access_TTD": False})
 
 # load user save data
 def load_user_save_data():
@@ -260,9 +262,15 @@ def load_user_save_data():
                 else:
                     myuser.countdown_complete = True
 
+                myuser.access_TTD = row[4]
+                if myuser.access_TTD == 'False':
+                    myuser.access_TTD = False
+                else:
+                    myuser.access_TTD = True
+
 # update user save data
 def user_save_data():
-    field_names = ["user_row","username","current_question","countdown_complete","answer0","answer1","answer2","answer3"]
+    field_names = ["user_row","username","current_question","countdown_complete","access_TTD","answer0","answer1","answer2","answer3","answer4","answer5","answer6","answer7","answer8","answer9","answer10","answer11","answer12","answer13","answer14","answer15","answer16","answer17","answer18","answer19","answer20","answer21","answer22","answer23","answer24","answer25","answer26","answer27","answer28","answer29","answer30","answer31","answer32","answer33","answer34","answer35","answer36","answer37","answer38","answer39","answer40"]
 
     user_save_data_temp = {}
 
@@ -272,7 +280,7 @@ def user_save_data():
         # print print(user_save_data_temp)
 
     #print(user_save_data_temp[myuser.row])
-    myuser.current_quetion_field = field_names[myuser.current_question + 4]
+    myuser.current_quetion_field = field_names[myuser.current_question + 5]
     user_save_data_temp[myuser.row].update({myuser.current_quetion_field: myuser.answer})
     myuser.current_question += 1
     user_save_data_temp[myuser.row].update({"current_question": myuser.current_question})
@@ -304,7 +312,11 @@ def print_current_question():
         for row in reader:
             if int(row[0]) == myuser.current_question:
                 print(f'Q{myuser.current_question + 1}: ', end='')
-                print(row[1])
+                # sets varible and makes sure to wrap text to desired width
+                max_width = 60
+                wrapped_paragraph = textwrap.wrap(row[1], width=max_width)
+                for line in wrapped_paragraph:
+                    print(line)
 
 #check answer that has been entered for a match with the current question the user is up too.
 def check_answer():
@@ -385,41 +397,45 @@ def main_screen():
 def prompt():
     if myuser.current_question == myuser.total_questions:
         if myuser.countdown_complete == True:
-            ttd_completion_screen()
+            if myuser.access_TTD == True:
+                ttd_completion_screen()
+            else:
+                access_denied()
 
         elif myuser.countdown_complete == False:
             countdown()
 
     else:
         current_percent = round(myuser.current_question / myuser.total_questions * 100)
+        print_length = round(myuser.current_question / myuser.total_questions * 65)
         print("=================================================================")
-        print('TTD4092 Calibration completion level')
-        for i in range(myuser.current_question):
+        print('|              TTD4092 Calibration completion level             |')
+        print("=================================================================")
+        for i in range(print_length):
             print('-', end='')
         print(f"{current_percent}%")
         print("=================================================================")
         print_current_question()
         print('Type your answer below')
         answer = input('>')
-        myuser.answer = answer.lower()
+        myuser.answer = answer.lower().strip()
 
         # safety exit for me to fix any issues that might be found while program is running
-        if answer.lower() == '.exit!!':
+        if answer.lower().strip() == '.exit!!':
             myuser.game_over = True
             exit_program()
-        elif answer.lower() == '.admin!!':
+        elif answer.lower().strip() == '.admin!!':
             admin_check()
-        elif answer.lower() == 'logout':
+        elif answer.lower().strip() == 'logout':
             main_screen()
-        elif answer.lower() == 'show keys':
+        elif answer.lower().strip() == 'show keys':
             print_all_keys()
         # easter egg from back to the future
         elif answer.lower().strip() == '88 miles per hour':
-            print("PUT EASTER EGG HERE")
             car_print()
             time.sleep(5)
             os.system('clear')
-        elif answer.lower() == 'shutdown':
+        elif answer.lower().strip() == 'shutdown':
             shutdown()
         elif answer.lower().strip() != '.exit!!':
             check_answer()
@@ -437,7 +453,12 @@ def wrong_answer_random():
 
         for row in reader:
             if int(row[0]) == myuser.random_no:
-                print(row[1])
+                # sets varible and makes sure to wrap text to desired width
+                max_width = 65
+                wrapped_paragraph = textwrap.wrap(row[1], width=max_width)
+                for line in wrapped_paragraph:
+                    print(line)
+
 
     print('Press ENTER key to continue . . .', end="")
     input()
@@ -478,7 +499,7 @@ def countdown():
     print("Original time:")
     print(date_and_time.strftime('%H:%M:%S'))
 
-    # Calling the timedelta() function
+    # Calling the timedelta() function (30 mins is total time students do I go 60min)
     time_change = datetime.timedelta(minutes=30)
     myuser.current_time = date_and_time + time_change
 
@@ -486,7 +507,7 @@ def countdown():
     print("Changed time:")
     print(myuser.current_time.strftime('%H:%M:%S'))
 
-    while myuser.answer != 'answer1':
+    while myuser.answer != myuser.correct_answer:
         os.system('clear')
         new_date_time = datetime.datetime.today()
         time_rem = myuser.current_time - new_date_time
@@ -495,19 +516,40 @@ def countdown():
         hours, remainder = divmod(time_rem.seconds, 3600)
         minutes, seconds = divmod(remainder, 60)
 
-        # Printing the time remaining in the desired format
-        print('Calibration complete you now have 30 mins to enter the final passcode')
-        print("Time remaining: {:02}:{:02}:{:02}".format(hours, minutes, seconds))
-        print('Passcode: ', end='')
-        myuser.answer = input('>').lower()
+        # checks the user still has time to complete type the answer in the program
+        if time_rem.seconds > 0 and time_rem.seconds < 1801:
+            # Printing the time remaining in the desired format
+            print('Calibration complete you now have 30 mins to enter the final answer')
+            print("---------------------------------------------------------------------")
+            print("On your travels you would have seen Random words and years.")
+            print("First order these by date. Then what ever order they are in is there")
+            print("number. Use that number letter and it should make a word. For example")
+            print("dog is third in the timeline use the third letter ‘g’")
+            print("---------------------------------------------------------------------")
+            print("Time remaining: {:02}:{:02}:{:02}".format(hours, minutes, seconds))
+            print('Answer: ', end='')
+            myuser.answer = input('>').lower().strip()
 
-    os.system('clear')
-    myuser.countdown_complete = True
-    update_user_countdown()
+        else:
+            break
+
+    if myuser.answer == myuser.correct_answer:
+        os.system('clear')
+        myuser.countdown_complete = True
+        myuser.access_TTD = True
+        update_user_countdown()
+        pass_timer()
+
+    else:
+        os.system('clear')
+        myuser.countdown_complete = True
+        myuser.access_TTD = False
+        update_user_countdown()
+        fail_timer()
 
 # updates user countdown_complete
 def update_user_countdown():
-    field_names = ["user_row","username","current_question","countdown_complete","answer0","answer1","answer2","answer3"]
+    field_names = ["user_row","username","current_question","countdown_complete","access_TTD","answer0","answer1","answer2","answer3","answer4","answer5","answer6","answer7","answer8","answer9","answer10","answer11","answer12","answer13","answer14","answer15","answer16","answer17","answer18","answer19","answer20","answer21","answer22","answer23","answer24","answer25","answer26","answer27","answer28","answer29","answer30","answer31","answer32","answer33","answer34","answer35","answer36","answer37","answer38","answer39","answer40"]
 
     user_save_data_temp = {}
 
@@ -516,13 +558,108 @@ def update_user_countdown():
         user_save_data_temp = [row for row in csv_reader]
         # print print(user_save_data_temp)
 
-    user_save_data_temp[myuser.row].update({"countdown_complete": myuser.countdown_complete})
+    user_save_data_temp[myuser.row].update({"countdown_complete": myuser.countdown_complete, "access_TTD": myuser.access_TTD})
 
     # re-writes user data
     with open('user_save_data.csv', 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = field_names)
         writer.writeheader()
         writer.writerows(user_save_data_temp)
+
+# create a screen to print amessage to the user that they did not complete the screen in time and they missed out on the treasure.
+def fail_timer():
+    os.system('clear')
+    print(r"""
+                ____ ___  ____  _____
+               / ___/ _ \|  _ \| ____|
+              | |  | | | | | | |  _|
+              | |__| |_| | |_| | |___
+             __\____\___/|____/|_____|___
+            | ____|  _ \|  _ \ / _ \|  _ \
+            |  _| | |_) | |_) | | | | |_) |
+            | |___|  _ <|  _ <| |_| |  _ <
+            |_____|_| \_\_| \_\\___/|_| \_\
+#######################################################
+#                     Error code 418                  #
+#######################################################
+#              TTD4092 Code Malfunction               #
+# This time location file is corrupt and cant be used #
+#     The device will now load its defult program     #
+####################################################### """)
+    time.sleep(5)
+    os.system('clear')
+    for i in range(100):
+        print('##################################################################')
+        print('##################################################################')
+        print(f'    TTD4092 SELF REBOOT - TTD4092 Loading version 8.4.21 %{i}    ')
+        print('##################################################################')
+        print('##################################################################')
+        time.sleep(.1)
+        os.system('clear')
+        myuser.countdown_complete = True
+        update_user_countdown()
+
+# creates a screen to print a message that user has won and gets the treasuer
+def pass_timer():
+    os.system('clear')
+    print(r"""
+
+ __     ______  _    _   _____ _____ _____    _____ _______
+ \ \   / / __ \| |  | | |  __ \_   _|  __ \  |_   _|__   __|
+  \ \_/ / |  | | |  | | | |  | || | | |  | |   | |    | |
+   \   /| |  | | |  | | | |  | || | | |  | |   | |    | |
+    | | | |__| | |__| | | |__| || |_| |__| |  _| |_   | |
+  __|_|_ \____/ \____/ _|_____/_____|_____/__|_____|__|_|
+ |  ____|  __ \ / __ \|  \/  |   |  __ \ / __ \ / ____|
+ | |__  | |__) | |  | | \  / |   | |  | | |  | | |
+ |  __| |  _  /| |  | | |\/| |   | |  | | |  | | |
+ | |    | | \ \| |__| | |  | |   | |__| | |__| | |____
+ |_|    |_|  \_\\____/|_|  |_|   |_____/ \____/ \_____|
+
+#######################################################
+#   You did it now you have shown me you are worthy   #
+#  I have programmed the device to take you the year  #
+#        where I hid the treasure which is 2077       #
+####################################################### """)
+    time.sleep(10)
+    os.system('clear')
+    print('##################################################################')
+    print('##################################################################')
+    print(f'   Take this CODE and YEAR to Mr Novinec to get your prize       ')
+    print('           Code: 8B3K-9P6X-2A1Z     Year: 2077                    ')
+    print('##################################################################')
+    print('##################################################################')
+    time.sleep(5)
+    print('Press ENTER to load the Novtronics TTD4092 software.              ')
+    input('>').lower().strip()
+    os.system('clear')
+    print(r"""
+                ____ ___  ____  _____
+               / ___/ _ \|  _ \| ____|
+              | |  | | | | | | |  _|
+              | |__| |_| | |_| | |___
+             __\____\___/|____/|_____|___
+            | ____|  _ \|  _ \ / _ \|  _ \
+            |  _| | |_) | |_) | | | | |_) |
+            | |___|  _ <|  _ <| |_| |  _ <
+            |_____|_| \_\_| \_\\___/|_| \_\
+#######################################################
+#                     Error code 418                  #
+#######################################################
+#              TTD4092 Code Malfunction               #
+# This time location file is corrupt and cant be used #
+#     The device will now load its defult program     #
+####################################################### """)
+    time.sleep(7)
+    os.system('clear')
+    for i in range(100):
+        print('##################################################################')
+        print('##################################################################')
+        print(f'    TTD4092 SELF REBOOT - TTD4092 Loading version 8.4.21 %{i}    ')
+        print('##################################################################')
+        print('##################################################################')
+        time.sleep(.1)
+        os.system('clear')
 
 # takes user to the TTD screen for them to use to teleport to differnet times
 def ttd_completion_screen():
@@ -531,9 +668,13 @@ def ttd_completion_screen():
         myuser.current_time = datetime.datetime.today().year
 
         while is_int == False:
-            print('This is now your device to travel to any year you wish be carefull on what you do there though')
-            print('Your current year is: ', end='')
-            print(myuser.current_time)
+            print('##################################################################')
+            print('#      Novtronics TTD4092 - SN: 150-32-020 - version 8.4.21      #')
+            print('##################################################################')
+            print('#                  Time Travel User Interface                    #')
+            print('##################################################################')
+            print(f'               Your current year is:{myuser.current_time}        ')
+            print('##################################################################')
             print('Enter new time destination:')
             myuser.answer = input('>')
             if myuser.answer in ['logout', '.admin!!', 'shutdown', '.exit!!']:
@@ -552,8 +693,13 @@ def ttd_completion_screen():
 
     elif myuser.first_time == False:
         while is_int == False:
-            print('Your current year is: ', end='')
-            print(myuser.current_time)
+            print('##################################################################')
+            print('#      Novtronics TTD4092 - SN: 150-32-020 - version 8.4.21      #')
+            print('##################################################################')
+            print('#                  Time Travel User Interface                    #')
+            print('##################################################################')
+            print(f'                Your current year is:{myuser.current_time}       ')
+            print('##################################################################')
             print('Enter new time destination:')
             myuser.answer = input('>')
             if myuser.answer in ['logout', '.admin!!', 'shutdown', '.exit!!']:
@@ -584,6 +730,32 @@ def ttd_completion_screen():
     os.system('clear')
     prompt()
 
+# access denied screen if the user does not answer the question in time
+def access_denied():
+    os.system('clear')
+    print(r"""
+##################################################################
+##################################################################
+#       _   ___ ___ ___ ___ ___   ___  ___ _  _ ___ ___ ___      #
+#      /_\ / __/ __| __/ __/ __| |   \| __| \| |_ _| __|   \     #
+#     / _ \ (_| (__| _|\__ \__ \ | |) | _|| .` || || _|| |) |    #
+#    /_/ \_\___\___|___|___/___/ |___/|___|_|\_|___|___|___/     #
+##################################################################
+##################################################################
+#   You do not have the correct credentials to use this device   #
+#                   ERROR Code: 403 Forbidden                    #
+##################################################################
+##################################################################
+#         Please contact Novtronics for technical support        #
+#                               or                               #
+#               Please logout or shutdown the device             #
+##################################################################
+##################################################################""")
+    print('Please type your option here.')
+    myuser.answer = input('>').lower().strip()
+    if myuser.answer in ['logout', '.admin!!', 'shutdown', '.exit!!']:
+        user_options()
+
 # system exit function
 def exit_program():
     myuser.game_over = True
@@ -601,10 +773,6 @@ def shutdown():
     time.sleep(3)
     os.system('shutdown -h now')
     time.sleep(4)
-
-# mrm function
-def start_game():
-    return
 
 # main game loop which continually prompts user unless .game_over == True
 def main_loop():
@@ -627,35 +795,35 @@ def setup_TTD():
         print()
         time.sleep(0.05)
 
-        greeting2 = "Doc here. I've successfully hacked into the TTD, but there's a security protocol that I have set in place.\n"
+        greeting2 = "Doc here. I've successfully hacked into the TTD and I have put a security protocol in place.\n"
         for character in greeting2:
             sys.stdout.write(character)
             sys.stdout.flush()
-            time.sleep(0.07)
+            time.sleep(0.06)
 
-        greeting3 = "Before you can get it to work, you'll need to calibrate and build it.\n"
+        greeting3 = "Before you can get the TTD4092 to work, you'll need to calibrate and build it.\n"
         for character in greeting3:
             sys.stdout.write(character)
             sys.stdout.flush()
-            time.sleep(0.07)
+            time.sleep(0.06)
 
         greeting4 = "It's all part of ensuring the right hands control this powerful tech.\n"
         for character in greeting4:
             sys.stdout.write(character)
             sys.stdout.flush()
-            time.sleep(0.07)
+            time.sleep(0.06)
 
         greeting5 = "Get ready from here its up to you and your team to fix the TTD. Only the worthy will succeed.\n"
         for character in greeting5:
             sys.stdout.write(character)
             sys.stdout.flush()
-            time.sleep(0.07)
+            time.sleep(0.06)
 
-        greeting6 = "Let's make sure we're all on the same timeline.\n"
+        greeting6 = "Let's make sure we're all on the same timeline. See you then if you are worthy.\n"
         for character in greeting6:
             sys.stdout.write(character)
             sys.stdout.flush()
-            time.sleep(0.07)
+            time.sleep(0.06)
 
         print()
         time.sleep(0.05)
@@ -664,7 +832,7 @@ def setup_TTD():
         for character in greeting7:
             sys.stdout.write(character)
             sys.stdout.flush()
-            time.sleep(0.07)
+            time.sleep(0.06)
 
         print('Press ENTER key to continue . . .', end="")
         input()
