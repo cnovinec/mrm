@@ -82,6 +82,6 @@ Conponent list - Below I have created a list for anyone wishing to replecate thi
 - Cables - HDMI to micro HDMI, USB c to USB a, USB a to micro USB  <>
 - <[Battery - Cygnett ChargeUp Maxx Digital 30k Power Bank (Black)](https://www.jbhifi.com.au/products/cygnett-chargeup-maxx-digital-30k-power-bank-black?ab_version=B&gad_source=1&gclid=Cj0KCQjw_qexBhCoARIsAFgBleu9gyE6HHaScHiQTHva6gDxj99TcLwl8yPkD7jR5sFrOWgvmpOVhlEaAuMjEALw_wcB)>
 - <[Case - Tactix Tough Case in Black - Medium](https://www.bunnings.com.au/tactix-tough-case-in-black-medium_p0492544)>
-- <[CAD files ](https://www.thingiverse.com/thing:6595698)>
+- <[CAD files](https://www.thingiverse.com/thing:6595698)>
 - <[Keyboard - Logitech K380S Pebble Keys 2 Wireless Keyboard (Graphite)](https://www.jbhifi.com.au/products/logitech-k380s-pebble-keys-2-wireless-keyboard-graphite)>
 
