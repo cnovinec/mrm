@@ -69,7 +69,7 @@ list of debug issue put lines of errror and code and issue discription:
 - [X] fixed by correcting bool value - line 495 program works till code has to be entered into timer but then goes to black screen needs to go to prompt again I think
 - [X] fixed by adding if statment after line 95 - line 125 only when no user entered and after 3rd try program still logs user in skips line 125. error is on line 95 as checks this first then skips the if function later
 - [X] fixed by adding os.system('clear') - line 48 shutdown function using in main screen does not clear screen properly
-- []fixed by editing bash ternminal and adding "" - in bash on RaspberryPI users can use ctrl z/ ctrl c to end program
+- [] fixed by editing bash ternminal and adding "" - in bash on RaspberryPI users can use ctrl z/ ctrl c to end program
 
 
 Source code is located: <[Github source code](https://github.com/cnovinec/mrm)>
