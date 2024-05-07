@@ -49,8 +49,8 @@ list planned stages of full project:
 - [X] Add questions, answers and keys to project db solution
 - [X] Add questions and set up website for clues and information
 - [X] Full software test
-- [] Full hardware and software test on RasberryPI
-- [] Use CAD software to develop mounting solution for all hardware components
+- [X] Full hardware and software test on RasberryPI
+- [X] Use CAD software to develop mounting solution for all hardware components
 - [] Test fit and run ensuring no issues casued by chassis design - CAD changes if needed.
 - [] Full beta testing of fully fitted out hardware and software. Aim to find bugs hardware issues or even 'hacks'
 - [] Final testing
