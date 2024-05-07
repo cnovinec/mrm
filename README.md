@@ -76,12 +76,12 @@ Source code is located: <https://github.com/cnovinec/mrm/settings>
 I have uploaded the source code and the important files that the program uses to opperate. I have not only uploaded a the cs50 video but a more detailed video to my YouTube which can be found here <https://www.youtube.com/watch?v=y2Y22vVYpBw&ab_channel=KILRSHEEP>. Feel free to contact me on github or via my YouTube <youtube.com/@KILRSHEEP>
 
 Conponent list - Below I have created a list for anyone wishing to replecate this project. It will have websites as well as links to CAD files of my chassis desgin.
-    -Raspberry Pi 4B Single Board Computer 8GB <[Raspberry Pi 4B Single Board Computer 8GB](https://www.jaycar.com.au/raspberry-pi-4b-single-board-computer-8gb/p/XC9104?pos=3&queryId=24a1c2c3684f4caf360c14185bba2180&sort=relevance&searchText=Raspberry%20Pi%204B)>
-    -Case heatink Heatsink Case with Dual Fan for RPi4 <https://www.jaycar.com.au/heatsink-case-with-dual-fan-for-rpi4/p/XC9112?pos=6&queryId=8662e3467dc9c968a3db10f6ab7170ce&sort=relevance&searchText=Raspberry%20pi%20case>
-    -Display - 1024x600 HDMI 7in Screen with USB Capacitive Touch <https://www.jaycar.com.au/1024x600-hdmi-7in-screen-with-usb-capacitive-touch/p/XC9026>
-    -Cables - HDMI to micro HDMI, USB c to USB a, USB a to micro USB  <>
-    -Battery - Cygnett ChargeUp Maxx Digital 30k Power Bank (Black)<https://www.jbhifi.com.au/products/cygnett-chargeup-maxx-digital-30k-power-bank-black?ab_version=B&gad_source=1&gclid=Cj0KCQjw_qexBhCoARIsAFgBleu9gyE6HHaScHiQTHva6gDxj99TcLwl8yPkD7jR5sFrOWgvmpOVhlEaAuMjEALw_wcB>
-    -Case - Tactix Tough Case in Black - Medium <https://www.bunnings.com.au/tactix-tough-case-in-black-medium_p0492544>
-    -CAD files <https://www.thingiverse.com/thing:6595698>
-    -Keyboard - Logitech K380S Pebble Keys 2 Wireless Keyboard (Graphite) <https://www.jbhifi.com.au/products/logitech-k380s-pebble-keys-2-wireless-keyboard-graphite>
+- <[Raspberry Pi 4B Single Board Computer 8GB](https://www.jaycar.com.au/raspberry-pi-4b-single-board-computer-8gb/p/XC9104?pos=3&queryId=24a1c2c3684f4caf360c14185bba2180&sort=relevance&searchText=Raspberry%20Pi%204B)>
+- <[Case heatink Heatsink Case with Dual Fan for RPi4](https://www.jaycar.com.au/heatsink-case-with-dual-fan-for-rpi4/p/XC9112?pos=6&queryId=8662e3467dc9c968a3db10f6ab7170ce&sort=relevance&searchText=Raspberry%20pi%20case)>
+-  <[Display - 1024x600 HDMI 7in Screen with USB Capacitive Touch](https://www.jaycar.com.au/1024x600-hdmi-7in-screen-with-usb-capacitive-touch/p/XC9026)>
+- Cables - HDMI to micro HDMI, USB c to USB a, USB a to micro USB  <>
+- <[Battery - Cygnett ChargeUp Maxx Digital 30k Power Bank (Black)](https://www.jbhifi.com.au/products/cygnett-chargeup-maxx-digital-30k-power-bank-black?ab_version=B&gad_source=1&gclid=Cj0KCQjw_qexBhCoARIsAFgBleu9gyE6HHaScHiQTHva6gDxj99TcLwl8yPkD7jR5sFrOWgvmpOVhlEaAuMjEALw_wcB)>
+- <[Case - Tactix Tough Case in Black - Medium](https://www.bunnings.com.au/tactix-tough-case-in-black-medium_p0492544)>
+- <[CAD files ](https://www.thingiverse.com/thing:6595698)>
+- <[Keyboard - Logitech K380S Pebble Keys 2 Wireless Keyboard (Graphite)](https://www.jbhifi.com.au/products/logitech-k380s-pebble-keys-2-wireless-keyboard-graphite)>
 
