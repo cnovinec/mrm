@@ -8,12 +8,12 @@ This program is designed to run in the cmd terminal window on the RaspberryPI an
 Key Files and their functions:
 Why did I choose these files types? I chose these file types as python was one of the smaller languages to keep tight with large functionallity. I chose to store username and passwords unhased at this point of time as the device will be completely used off grid and only be used to log in and store their game progression. The others I chose to use the csv files as I was able to keep the file size small and was going to be editable in excel which I could then easily transfer over to the Pi when question have been completed. Keeping it as a CSV file I am at anystage able to edit potential errors every quicky which could be an on the go fix.
 Eventually I would like to try and change this to a SQL db as this would shrink the code that little bit more. I am yet to fully check how to install SQL on the RaspberryPI.
-    -mrm.py - this is the main program which runs and manipulates the cmd terminal once commands are entered.
-    -u-p.csv - stores username and passwords and allows mrm.py to check if the user exists
-    -user_save_data.csv - stores user data and allows the program to load where the user was upto and keep track of that successfully
-    -mrmquestions.csv - stores questions for the program to present to user. stores answers to check when user enters their answer and finally if correct stores key to be printed out key for them to user.
-    -rand_wrong.csv - stores all random wrong statements to be called by mrm.py to be printed to the user when inccorect answer is entered in the calibration screen.
-    -easteregg.py - allows when function called to print easteregg in terminal. This was used to keep the code clean as there were plans to add a few other eastereggs
+    - mrm.py - this is the main program which runs and manipulates the cmd terminal once commands are entered.
+    - u-p.csv - stores username and passwords and allows mrm.py to check if the user exists
+    - user_save_data.csv - stores user data and allows the program to load where the user was upto and keep track of that successfully
+    - mrmquestions.csv - stores questions for the program to present to user. stores answers to check when user enters their answer and finally if correct stores key to be printed out key for them to user.
+    - rand_wrong.csv - stores all random wrong statements to be called by mrm.py to be printed to the user when inccorect answer is entered in the calibration screen.
+    - easteregg.py - allows when function called to print easteregg in terminal. This was used to keep the code clean as there were plans to add a few other eastereggs
 
 Features and functions:
 User functions: This section will talk specifically about the user fucntion that I have embbeded so that the program can be used effectivly.
