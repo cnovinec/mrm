@@ -60,15 +60,15 @@ Debugging and issues faced while programming:
 Currently I have found a range of issues with this program from small to large and this is a list of all issues needing to be listed and fixed weather it was something I completed right away or the next day. But thought it would be usful to keep track of, if I was to come back and make modification to at a later stage.
 
 list of debug issue put lines of errror and code and issue discription:
-- [X]fixed by changing word from any to ENTER - line 61 & 99 issue with any key registers any typed key but must click enter
-- [X]fixed by changing myuser.game_over = to True (breaks while loop) - line 60 mrm.py does not sys.exit() even though i do when typed
-- [X]fixed by adding setup_TTD() - line 38 when goes throuhg login function it then exits does not continue the program
-- [X]fixed by adding main_screen() loop - line 30 after creating username program exits
-- [X]fixed by adding code into mrm.py and entering loop if incorrect - line 41 if yhou do not enter the correct username or password 3 times you still pass through to main program and clues
-- [X]fixed by adding 0 to current question - line 213 issue when user has logged in and logs out user current question stays so if you are to create a new user after loging out the new user gets the same current question.
-- [X]fixed by correcting bool value - line 495 program works till code has to be entered into timer but then goes to black screen needs to go to prompt again I think
-- [X]fixed by adding if statment after line 95 - line 125 only when no user entered and after 3rd try program still logs user in skips line 125. error is on line 95 as checks this first then skips the if function later
-- [X]fixed by adding os.system('clear') - line 48 shutdown function using in main screen does not clear screen properly
+- [X] fixed by changing word from any to ENTER - line 61 & 99 issue with any key registers any typed key but must click enter
+- [X] fixed by changing myuser.game_over = to True (breaks while loop) - line 60 mrm.py does not sys.exit() even though i do when typed
+- [X] fixed by adding setup_TTD() - line 38 when goes throuhg login function it then exits does not continue the program
+- [X] fixed by adding main_screen() loop - line 30 after creating username program exits
+- [X] fixed by adding code into mrm.py and entering loop if incorrect - line 41 if yhou do not enter the correct username or password 3 times you still pass through to main program and clues
+- [X] fixed by adding 0 to current question - line 213 issue when user has logged in and logs out user current question stays so if you are to create a new user after loging out the new user gets the same current question.
+- [X] fixed by correcting bool value - line 495 program works till code has to be entered into timer but then goes to black screen needs to go to prompt again I think
+- [X] fixed by adding if statment after line 95 - line 125 only when no user entered and after 3rd try program still logs user in skips line 125. error is on line 95 as checks this first then skips the if function later
+- [X] fixed by adding os.system('clear') - line 48 shutdown function using in main screen does not clear screen properly
 - []fixed by editing bash ternminal and adding "" - in bash on RaspberryPI users can use ctrl z/ ctrl c to end program
 
 
