@@ -72,8 +72,8 @@ list of debug issue put lines of errror and code and issue discription:
 - []fixed by editing bash ternminal and adding "" - in bash on RaspberryPI users can use ctrl z/ ctrl c to end program
 
 
-Source code is located: <https://github.com/cnovinec/mrm/settings>
-I have uploaded the source code and the important files that the program uses to opperate. I have not only uploaded a the cs50 video but a more detailed video to my YouTube which can be found here <https://www.youtube.com/watch?v=y2Y22vVYpBw&ab_channel=KILRSHEEP>. Feel free to contact me on github or via my YouTube <youtube.com/@KILRSHEEP>
+Source code is located: <[Github source code](https://github.com/cnovinec/mrm)>
+I have uploaded the source code and the important files that the program uses to opperate. I have not only uploaded a the cs50 video but a more detailed video to my YouTube which can be found here [NO VIDEO AVALIBLE YET]. Feel free to contact me on github or via my YouTube <youtube.com/@KILRSHEEP>
 
 Conponent list - Below I have created a list for anyone wishing to replecate this project. It will have websites as well as links to CAD files of my chassis desgin.
 - <[Raspberry Pi 4B Single Board Computer 8GB](https://www.jaycar.com.au/raspberry-pi-4b-single-board-computer-8gb/p/XC9104?pos=3&queryId=24a1c2c3684f4caf360c14185bba2180&sort=relevance&searchText=Raspberry%20Pi%204B)>
