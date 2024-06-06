@@ -51,7 +51,7 @@ list planned stages of full project:
 - [X] Full software test
 - [X] Full hardware and software test on RaspberryPI
 - [X] Use CAD software to develop mounting solution for all hardware components
-- [] Test fit and run ensuring no issues casued by chassis design - CAD changes if needed.
+- [X] Test fit and run ensuring no issues casued by chassis design - CAD changes if needed.
 - [] Full beta testing of fully fitted out hardware and software. Aim to find bugs hardware issues or even 'hacks'
 - [] Final testing
 - [] Project implemntation - school term 3 in Aus Monday 22 July 2024 - 0900 AEST
