@@ -54,7 +54,7 @@ list planned stages of full project:
 - [X] Test fit and run ensuring no issues casued by chassis design - CAD changes if needed.
 - [X] Full beta testing of fully fitted out hardware and software. Aim to find bugs hardware issues or even 'hacks'
 - [X] Final testing
-- [] Project implemntation - school term 3 in Aus Monday 22 July 2024 - 0900 AEST
+- [ ] Project implemntation - school term 3 in Aus Monday 22 July 2024 - 0900 AEST
 
 Debugging and issues faced while programming:
 Currently I have found a range of issues with this program from small to large and this is a list of all issues needing to be listed and fixed weather it was something I completed right away or the next day. But thought it would be usful to keep track of, if I was to come back and make modification to at a later stage.
@@ -72,6 +72,7 @@ list of debug issue put lines of errror and code and issue discription:
 - [X] fixed by editing bash ternminal and adding "nano ~/bashrc" then "trap '' 20" and "trap '' 2" - in bash on RaspberryPI users can use ctrl z/ ctrl c to end program
 - [X] Fixed with "xterm -fullscreen - fa 'Monospace' -fs 15 bg black -fg red" - Issue getting screen fullscreen
 - [X] Fixed with "nano ~/bashrc" then putting in line of cd to the file location then running the python program - Run python program at start up of terminal
+- [X] use od this commmand allows device to boot to command line "sudo raspi-config" - START at startup does not boot to desktop
 
 
 Source code is located: <[Github source code](https://github.com/cnovinec/mrm)>
