@@ -521,10 +521,8 @@ def countdown():
             # Printing the time remaining in the desired format
             print('Calibration complete you now have 30 mins to enter the final answer')
             print("---------------------------------------------------------------------")
-            print("On your travels you would have seen Random words and years.")
-            print("First order these by date. Then what ever order they are in is there")
-            print("number. Use that number letter and it should make a word. For example")
-            print("dog is third in the timeline use the third letter ‘g’")
+            wrapped_paragraph = textwrap.wrap("On your travels you would have seen Random words and years. First order these by date. Then what ever order they are in is there number. Use that number letter and it should make a word. For example dog is third in the timeline use the third letter ‘g’.")
+            print(wrapped_paragraph)
             print("---------------------------------------------------------------------")
             print("Time remaining: {:02}:{:02}:{:02}".format(hours, minutes, seconds))
             print('Answer: ', end='')
