@@ -52,8 +52,8 @@ list planned stages of full project:
 - [X] Full hardware and software test on RaspberryPI
 - [X] Use CAD software to develop mounting solution for all hardware components
 - [X] Test fit and run ensuring no issues casued by chassis design - CAD changes if needed.
-- [] Full beta testing of fully fitted out hardware and software. Aim to find bugs hardware issues or even 'hacks'
-- [] Final testing
+- [X] Full beta testing of fully fitted out hardware and software. Aim to find bugs hardware issues or even 'hacks'
+- [X] Final testing
 - [] Project implemntation - school term 3 in Aus Monday 22 July 2024 - 0900 AEST
 
 Debugging and issues faced while programming:
@@ -69,7 +69,7 @@ list of debug issue put lines of errror and code and issue discription:
 - [X] fixed by correcting bool value - line 495 program works till code has to be entered into timer but then goes to black screen needs to go to prompt again I think
 - [X] fixed by adding if statment after line 95 - line 125 only when no user entered and after 3rd try program still logs user in skips line 125. error is on line 95 as checks this first then skips the if function later
 - [X] fixed by adding os.system('clear') - line 48 shutdown function using in main screen does not clear screen properly
-- [] fixed by editing bash ternminal and adding "" - in bash on RaspberryPI users can use ctrl z/ ctrl c to end program
+- [X] fixed by editing bash ternminal and adding "nano ~/bashrc" then "trap '' 20" and "trap '' 2" - in bash on RaspberryPI users can use ctrl z/ ctrl c to end program
 
 
 Source code is located: <[Github source code](https://github.com/cnovinec/mrm)>
