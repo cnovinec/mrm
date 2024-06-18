@@ -70,7 +70,7 @@ list of debug issue put lines of errror and code and issue discription:
 - [X] fixed by adding if statment after line 95 - line 125 only when no user entered and after 3rd try program still logs user in skips line 125. error is on line 95 as checks this first then skips the if function later
 - [X] fixed by adding os.system('clear') - line 48 shutdown function using in main screen does not clear screen properly
 - [X] fixed by editing bash ternminal and adding "nano ~/bashrc" then "trap '' 20" and "trap '' 2" - in bash on RaspberryPI users can use ctrl z/ ctrl c to end program
-- [X] Fixed with "xterm -fullscreen - fa 'Monospace' -fs 15 bg black -fg red" - Issue getting screen fullscreen
+- [X] Fixed with "xterm -fullscreen - fa 'Monospace' -fs 15 -bg black -fg red" - Issue getting screen fullscreen
 - [X] Fixed with "nano ~/bashrc" then putting in line of cd to the file location then running the python program - Run python program at start up of terminal
 - [X] use od this commmand allows device to boot to command line "sudo raspi-config" - START at startup does not boot to desktop
 
