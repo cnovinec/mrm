@@ -73,6 +73,7 @@ list of debug issue put lines of errror and code and issue discription:
 - [X] Fixed with "xterm -fullscreen - fa 'Monospace' -fs 15 -bg black -fg red" - Issue getting screen fullscreen
 - [X] Fixed with "nano ~/bashrc" then putting in line of cd to the file location then running the python program - Run python program at start up of terminal
 - [X] use od this commmand allows device to boot to command line "sudo raspi-config" - START at startup does not boot to desktop
+- [ ] Error on line 527 - Cant print words and program shuts down (will attempt to try fix by using text wrap)
 
 
 Source code is located: <[Github source code](https://github.com/cnovinec/mrm)>
