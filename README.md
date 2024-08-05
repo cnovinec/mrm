@@ -1,4 +1,4 @@
-# Mount Rowan Mystery Time Travel Device program interface
+![image](https://github.com/user-attachments/assets/0ebd6aff-a156-4dff-bf4f-50b4b60de954)# Mount Rowan Mystery Time Travel Device program interface
 #### Video Demo:  <[MRM TTD4092 video demo](https://www.youtube.com/watch?v=y2Y22vVYpBw&ab_channel=KILRSHEEP)>
 #### Description:
 Intro to program:
@@ -74,6 +74,7 @@ list of debug issue put lines of errror and code and issue discription:
 - [X] Fixed with "nano ~/bashrc" then putting in line of cd to the file location then running the python program - Run python program at start up of terminal
 - [X] use od this commmand allows device to boot to command line "sudo raspi-config" - START at startup does not boot to desktop
 - [X] Fixed by removing '' from 'g' - Error on line 527 - Cant print words and program shuts down (will attempt to try fix by using text wrap)
+- [ ] Fixed issue with question 27 nont reconising 042 as answer. - CSV doc when edited in LibraOffice removes 0 from 042. Had to edit in VScode
 
 
 Source code is located: <[Github source code](https://github.com/cnovinec/mrm)>
