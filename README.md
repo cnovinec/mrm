@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/0ebd6aff-a156-4dff-bf4f-50b4b60de954)# Mount Rowan Mystery Time Travel Device program interface
+# Mount Rowan Mystery Time Travel Device program interface
 #### Video Demo:  <[MRM TTD4092 video demo](https://www.youtube.com/watch?v=y2Y22vVYpBw&ab_channel=KILRSHEEP)>
 #### Description:
 Intro to program:
